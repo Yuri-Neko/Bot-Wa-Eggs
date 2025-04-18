@@ -1,0 +1,46 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-04-19T01:51:48+07:00",
+    "name": "Node JS VIP - Ren Takamori",
+    "author": "ren@takamori.xyz",
+    "description": "This is a egg for whatsapp bot. This egg was included pm2, ffmpeg , imagemagick, speedtest, etc. This egg open source and free for everyone. DONT SELL THIS EGG!!!\r\n\r\nDownload link: https:\/\/go.onee.eu.org\/EGG\r\n\r\nThis egg is based-on parkervcp egg and under Apache License. Enjoy you code :D\r\n\r\nFollow my whatsapp channel\r\nhttps:\/\/whatsapp.com\/channel\/0029VaN4OOiEVccC9tm65L19",
+    "features": null,
+    "docker_images": {
+        "Nodejs 18 Ren": "ghcr.io\/yuri-neko\/yolks:nodejs_18",
+        "Nodejs 20 Ren": "ghcr.io\/yuri-neko\/yolks:nodejs_20",
+        "Nodejs 21 Ren": "ghcr.io\/yuri-neko\/yolks:nodejs_21",
+        "Nodejs 22 Ren": "ghcr.io\/yuri-neko\/yolks:nodejs_22",
+        "Nodejs 23 Ren": "ghcr.io\/yuri-neko\/yolks:nodejs_23"
+    },
+    "file_denylist": [],
+    "startup": "{{STARTUP_CMD}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": [\r\n        \"change this text 1\",\r\n        \"change this text 2\"\r\n    ]\r\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# NodeJS App Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install curl -y\r\n\r\ncurl -fsSL https:\/\/deb.nodesource.com\/setup_lts.x | bash \r\n\r\napt install -y git nodejs curl jq file unzip make gcc g++ python3 python3-dev python3-pip libtool\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ \"${USER_UPLOAD}\" == \"true\" ] || [ \"${USER_UPLOAD}\" == \"1\" ]; then\r\n    echo -e \"assuming user knows what they are doing have a good day.\"\r\n    exit 0\r\nfi\r\n\r\n## add git ending if it's not on the address\r\nif [[ ${GIT_ADDRESS} != *.git ]]; then\r\n    GIT_ADDRESS=${GIT_ADDRESS}.git\r\nfi\r\n\r\nif [ -z \"${USERNAME}\" ] && [ -z \"${ACCESS_TOKEN}\" ]; then\r\n    echo -e \"using anon api call\"\r\nelse\r\n    GIT_ADDRESS=\"https:\/\/${USERNAME}:${ACCESS_TOKEN}@$(echo -e ${GIT_ADDRESS} | cut -d\/ -f3-)\"\r\nfi\r\n\r\n## pull git js repo\r\nif [ \"$(ls -A \/mnt\/server)\" ]; then\r\n    echo -e \"\/mnt\/server directory is not empty.\"\r\n    if [ -d .git ]; then\r\n        echo -e \".git directory exists\"\r\n        if [ -f .git\/config ]; then\r\n            echo -e \"loading info from git config\"\r\n            ORIGIN=$(git config --get remote.origin.url)\r\n        else\r\n            echo -e \"files found with no git config\"\r\n            echo -e \"closing out without touching things to not break anything\"\r\n            exit 10\r\n        fi\r\n    fi\r\n\r\n    if [ \"${ORIGIN}\" == \"${GIT_ADDRESS}\" ]; then\r\n        echo \"pulling latest from github\"\r\n        git pull\r\n    fi\r\nelse\r\n    echo -e \"\/mnt\/server is empty.\\ncloning files into repo\"\r\n    if [ -z ${BRANCH} ]; then\r\n        echo -e \"cloning default branch\"\r\n        git clone ${GIT_ADDRESS} .\r\n    else\r\n        echo -e \"cloning ${BRANCH}'\"\r\n        git clone --single-branch --branch ${BRANCH} ${GIT_ADDRESS} .\r\n    fi\r\n\r\nfi\r\n\r\necho \"Installing nodejs packages\"\r\nif [[ ! -z ${NODE_PACKAGES} ]]; then\r\n    \/usr\/local\/bin\/npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f \/mnt\/server\/package.json ]; then\r\n    \/usr\/local\/bin\/npm install --production\r\nfi\r\n\r\necho -e \"install complete\"\r\nexit 0",
+            "container": "ghcr.io\/mydapitt\/deb:debian-stable",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Command",
+            "description": "Letakan Perintah Startup Di Sini",
+            "env_variable": "STARTUP_CMD",
+            "default_value": "bash",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:60",
+            "field_type": "text"
+        }
+    ]
+}
