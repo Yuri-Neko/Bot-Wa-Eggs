@@ -18,8 +18,17 @@
 # Node.js 18 (LTS - Stabil untuk production)
 docker pull ghcr.io/yuri-neko/yolks:nodejs_18
 
+# Node.js 20 (Latest - Fitur terbaru)
+docker pull ghcr.io/yuri-neko/yolks:nodejs_20
+
 # Node.js 21 (Latest - Fitur terbaru)
 docker pull ghcr.io/yuri-neko/yolks:nodejs_21
+
+# Node.js 22 (Latest - Fitur terbaru)
+docker pull ghcr.io/yuri-neko/yolks:nodejs_22
+
+# Node.js 23 (Latest - Fitur terbaru)
+docker pull ghcr.io/yuri-neko/yolks:nodejs_23
 ```
 
 ## 💡 **Cocok Untuk**  
