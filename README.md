@@ -65,7 +65,7 @@ Kunjungi [GitHub Package](https://github.com/yuri-neko/yolks/pkgs/container/yolk
 ---
 
 **Preview**
-![Docker Node.js](https://github.com/Yuri-Neko/Bot-Wa-Eggs/blob/main/Screenshot%202025-04-19%20014128.png?raw=true)
+(https://github.com/Yuri-Neko/Bot-Wa-Eggs/blob/main/Screenshot%202025-04-19%20014128.png?raw=true)
 
 ⭐ **Keren kan? Kasih bintang ya!**  
 Bantu developer lain menemukan gambar Docker yang berguna ini  
