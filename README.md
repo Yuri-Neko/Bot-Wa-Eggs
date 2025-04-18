@@ -69,7 +69,7 @@ Kunjungi [GitHub Package](https://github.com/yuri-neko/yolks/pkgs/container/yolk
 <img src="https://github.com/Yuri-Neko/Bot-Wa-Eggs/blob/main/Screenshot%202025-04-19%20014128.png?raw=true" width="200" alt="Preview Pterodactyl Eggs">
 
 ⭐ **Keren kan? Kasih bintang ya!**  
-Bantu developer lain menemukan gambar Docker yang berguna ini  
+Klo ada masukan atau ingin tambah packages silakan buka issue agar bisa di tambahkan
 
 **Happy Coding!** 🚀🐾  
 
