@@ -71,7 +71,7 @@ docker pull ghcr.io/yuri-neko/yolks:nodejs_23
 
 ## 📸 **Preview**  
 
-<img src="https://github.com/Yuri-Neko/Bot-Wa-Eggs/blob/main/Screenshot%202025-04-19%20014128.png?raw=true" width="400" alt="Preview Pterodactyl Eggs">
+<img src="https://github.com/Yuri-Neko/Bot-Wa-Eggs/blob/main/Screenshot%202025-04-19%20014128.png?raw=true" width="200" alt="Preview Pterodactyl Eggs">
 
 ## 🔗 **Info Lengkap / More Information**  
 Kunjungi [GitHub Package](https://github.com/users/Yuri-Neko/packages/container/package/yolks) untuk detail lebih lanjut  
