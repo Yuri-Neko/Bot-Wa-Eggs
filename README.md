@@ -55,7 +55,7 @@ docker run -v $(pwd):/app -w /app ghcr.io/yuri-neko/yolks:nodejs_21 node app.js
 ✔ **Siap production** - Konfigurasi optimal sudah include  
 
 ## 🔗 **Info Lengkap**  
-Kunjungi [GitHub Package](https://github.com/yuri-neko/yolks/pkgs/container/yolks) untuk detail lebih lanjut  
+Kunjungi [GitHub Package](https://github.com/users/Yuri-Neko/packages/container/package/yolks) untuk detail lebih lanjut  
 
 ---
 
